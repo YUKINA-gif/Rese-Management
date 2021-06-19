@@ -1,24 +1,98 @@
-# rese-management
+# Rese
 
-## Project setup
+飲食店予約サービスのフロントエンドです。
+
+## Prerequisites
+
+- Node.js 14.17.0
+- Vue.js 4.5.13
+
+## Installing
+インストール方法は省きます。
+
+まだインストールしていない場合は[こちら](https://github.com/YUKINA-gif/Rese.git)から確認してください。
+
+## Data Edit
+
+リポジトリを取得します。
+
+CLI を開きます。
+任意の場所にリポジトリをコピーします。
+
 ```
-yarn install
+$ git clone https://github.com/YUKINA-gif/Rese-Management.git
 ```
 
-### Compiles and hot-reloads for development
+ディレクトリに移動し、npm パッケージをインストールし、脆弱性の修正をします。
+
 ```
-yarn serve
+$ cd Rese
+
+$ npm install
+
+$ npm audit fix
 ```
 
-### Compiles and minifies for production
+## Access
+
+アクセスし、動作を確認します。
+
+ディレクトリ直下で下記コマンドを入力し、ローカルサーバーを起動します。
+
 ```
-yarn build
+$ yarn serve
 ```
 
-### Lints and fixes files
-```
-yarn lint
-```
+立ち上がったサーバーにアクセスします。
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Function
+
+機能一覧です。
+
+### 管理者ログイン(トップページ)
+
+IDとパスワードを使いログインすることが可能です。
+
+下記を使ってログインします。
+
+ID:  01
+
+パスワード:  fKlQlugM
+
+#### URL:
+
+http://localhost:8080
+
+### 店舗代表者権限発行
+
+店舗代表者用のID,パスワードを登録することができます。
+
+各バリデーション、入力例は以下です。
+| 各項目 | 条件 | 入力例 |
+| --- | --- |--- |
+| ID | 入力必須,文字列 | 005 |
+
+IDを入力後、"パスワードを発行する"をクリックするとランダム英字のパスワードが発行され、ページ下記に表示されます。
+
+"閉じる"を押すとパスワードの表示が消えますのでご注意ください。
+
+#### URL:
+
+http://localhost:8080/manager/store-manager/create
+
+### 管理者権限発行
+
+管理者用のID,パスワードを登録することができます。
+
+各バリデーション、入力例は以下です。
+| 各項目 | 条件 | 入力例 |
+| --- | --- |--- |
+| ID | 入力必須,文字列 | 07 |
+
+IDを入力後、"パスワードを発行する"をクリックすると店舗代表者同様ランダム英字のパスワードが発行され、ページ下記に表示されます。
+
+"閉じる"を押すとパスワードの表示が消えますのでご注意ください。
+
+#### URL:
+
+http://localhost:8080/manager/create
