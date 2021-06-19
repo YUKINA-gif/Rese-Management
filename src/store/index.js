@@ -16,9 +16,6 @@ export default new Vuex.Store({
     auth(state, payload) {
       state.auth = payload;
     },
-    manager(state, payload) {
-      state.manager = payload;
-    },
     logout(state, payload) {
       state.auth = payload;
     },
@@ -33,16 +30,7 @@ export default new Vuex.Store({
         .catch(() => {
           alert("ログインできませんでした");
         });
-      const responseManager = await axios.get(
-        "https://rese-booking.herokuapp.com/api/manage",
-        {
-          params: {
-            login_id: login_id,
-          },
-        }
-      );
       commit("auth", responseLogin.data.auth);
-      commit("manager", responseManager.data.manager);
       router.replace("/manager/store-manager/create");
     },
     logout({ commit }) {
