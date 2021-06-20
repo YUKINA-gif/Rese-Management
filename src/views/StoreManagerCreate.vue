@@ -19,7 +19,7 @@
       <p class="password_issuance">パスワードを発行しました</p>
       <p class="password">{{ password }}</p>
       <p>この画面を閉じるとパスワードが表示されなくなります</p>
-      <p>必ずメモしてください</p>
+      <p>ご注意ください</p>
       <button class="close_button" @click="password_card = false">
         閉じる
       </button>
