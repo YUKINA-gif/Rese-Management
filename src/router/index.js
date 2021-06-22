@@ -2,7 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from "../views/ManagerLogin.vue";
 import StoreManagerCreate from "../views/StoreManagerCreate.vue";
-import CreateManager from '../views/ManagerCreate.vue'
+import CreateManager from '../views/ManagerCreate.vue';
+import NotFound from "../views/NotFound.vue";
 import store from "../store/index";
 
 Vue.use(VueRouter)
@@ -28,6 +29,11 @@ const routes = [
     meta: {
       requiresAuth: true,
     },
+  },
+  {
+    path: "*",
+    name: "NotFound",
+    component: NotFound,
   },
 ];
 
